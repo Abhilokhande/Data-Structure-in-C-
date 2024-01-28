@@ -49,6 +49,20 @@ struct node* insert_last(struct node* head,int data)
     return head;
 
 }
+node* rev_display(struct node*head){
+ node* prev=nullptr;
+ node* current=head;
+ node* temp=nullptr;
+ while(current!=nullptr)
+ { 
+    temp=current->next;
+    current->next=prev;
+    prev=current;
+    current=temp;
+ }
+ head=prev;
+ return head;
+}
 int main()
 {
     struct node* head;
@@ -79,8 +93,11 @@ int main()
     //traversing(head);
      //head=insert_between(head,55,1);
      //traversing(head);
-     cout<<endl<<endl;
-     head=insert_last(head,10000);
-     traversing(head);
+    // cout<<endl<<endl;
+     //head=insert_last(head,10000);
+     //traversing(head);
+     cout<<"Revered linkead list::"<<endl;
+     head=rev_display(head);
+      traversing(head);
     return 0;
 }

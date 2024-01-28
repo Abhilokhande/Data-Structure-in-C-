@@ -78,6 +78,19 @@ struct node* insert_mid(struct node*head,int data,int index)
   xy->prev=newnode;
     return head;
 }
+node* rev_List(node*head)
+{
+    node*current=head;
+    node*temp=nullptr;
+    while(current!=nullptr){
+        temp=current->next;
+        current->prev=current->next;
+       current->next=temp;
+        current=current->prev;
+    }
+    head=temp->prev;
+    return head;
+}
 int main(int argc, char const *argv[])
 {
     struct node* head=(struct node*)malloc(sizeof(struct node));
@@ -107,12 +120,15 @@ int main(int argc, char const *argv[])
     N5->next=NULL;
 
     traversing(head);
-    head=insert_first(head,5000);
+    /*head=insert_first(head,5000);
     traversing(head);
     head=insert_last(head,1000);
     traversing(head);
     head=insert_mid(head,50000,3);
     traversing(head);
-    traversing_Reverse(head);
+    traversing_Reverse(head);*/
+    head=rev_List(head);
+    cout<<"reversed inked(doubly)list"<<endl;
+    traversing(head);
     return 0;
 }

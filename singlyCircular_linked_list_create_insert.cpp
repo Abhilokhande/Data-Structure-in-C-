@@ -56,6 +56,20 @@ struct node * insertmid(struct node*head,int data,int index)
      ptr->next=newnode;
     return head;
 }
+node* rev_List(node* head)
+{
+    node*prev=nullptr;
+    node*current=head;
+    node*temp=nullptr;
+    do{
+        temp=current->next;
+        current->next=prev;
+        prev=current;
+        current=temp;
+    }while(current!=head);
+    head=prev;
+    return prev;
+}
 int main()
 {
    struct node* head=(struct node*)malloc(sizeof(struct node));
@@ -75,11 +89,14 @@ int main()
    four->data=50;
    four->next=head;
    traversing(head);
-   head=insertFirst(head,100000);
+   /*head=insertFirst(head,100000);
    traversing(head);
    head=insertlast(head,7532);
    traversing(head);
    head=insertmid(head,99999,2);
+   traversing(head);*/
+   cout<<"reversed linked list"<<endl;
+   head=rev_List(head);
    traversing(head);
     return 0;
 }
