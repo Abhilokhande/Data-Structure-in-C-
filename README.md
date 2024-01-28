@@ -56,7 +56,7 @@ Contributions are welcome! If you would like to contribute to this , please foll
 This project is licensed under the MIT License.
 
 ## Acknowledgments 🙏
-The code is writen in simple logic and swict case to make it simple to learn. 🚀🌟
+The code is writen in simple logic and switct case to make it simple to learn. 🚀🌟
 ### 👤 Author
 
 >>Mr.Abhijeet Bhausaheb Lokhande(Fergusson College, Pune.)
